@@ -3,6 +3,7 @@ import * as dotenv from 'dotenv'
 dotenv.config()
 
 try {
+    mongoose.set("strictQuery", false);
     await mongoose.connect(process.env.URI_MONGO)
     console.log('Connect DB ok 👋')
 } catch (error) {
